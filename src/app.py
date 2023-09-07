@@ -48,10 +48,14 @@ def stringToEvents(string):
         if (workingString[0:11] == "BEGIN:VEVENT\n"):
             for i in range (0, 5):
                 print ("hi")
+        
+        i += 1
+        
     events[0].show()
 
 
-calendar = open("src/test.txt", "r+")
-print(icsToString(calendar))
+calendar = open("C:/Users/rober/OneDrive/Documents/codes/todoist_import_tasks/todoist_import_tasks/src/test.txt", "r+")
+#print(icsToString(calendar))
+calendar = icsToString(calendar)
 
-stringToEvents(" klsjfkjsdfk")
+stringToEvents(calendar)
