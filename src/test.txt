@@ -1,0 +1,92 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:icalendar-ruby
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Robert Blendea Calendar (Canvas)
+X-WR-CALDESC:Calendar events for the user\, Robert Blendea
+BEGIN:VEVENT
+DTSTAMP:20230804T203800Z
+UID:event-calendar-event-282735
+DTSTART:20230822T020000Z
+DTEND:20230822T033000Z
+CLASS:PUBLIC
+DESCRIPTION:vcid:50205
+LOCATION:
+SEQUENCE:0
+SUMMARY:Erin Gabriel - Faculty Recital [US]
+URL:https://overlake.instructure.com/calendar?include_contexts=course_5953&
+ month=08&year=2023#calendar_event_282735
+X-ALT-DESC;FMTTYPE=text/html:<span class="hidden">vcid:50205</span>
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20230804T203800Z
+UID:event-calendar-event-282737
+DTSTART:20230822T224500Z
+DTEND:20230823T001500Z
+CLASS:PUBLIC
+DESCRIPTION:A gathering or all new faculty and staff with all returning fac
+ ulty and staffvcid:50166
+LOCATION:
+SEQUENCE:0
+SUMMARY:Faculty/Staff Soiree [US]
+URL:https://overlake.instructure.com/calendar?include_contexts=course_5953&
+ month=08&year=2023#calendar_event_282737
+X-ALT-DESC;FMTTYPE=text/html:A gathering or all new faculty and staff with 
+ all returning faculty and staff<span class="hidden">vcid:50166</span>
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20230426T214900Z
+UID:event-calendar-event-280588
+DTSTART;VALUE=DATE;VALUE=DATE:20230825
+CLASS:PUBLIC
+DESCRIPTION:More information will be shared as this date approaches. vcid:4
+ 8050
+LOCATION:
+SEQUENCE:0
+SUMMARY:New Student Orientation [US]
+URL:https://overlake.instructure.com/calendar?include_contexts=course_5953&
+ month=08&year=2023#calendar_event_280588
+X-ALT-DESC;FMTTYPE=text/html:More information will be shared as this date a
+ pproaches. <span class="hidden">vcid:48050</span>
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20230804T203800Z
+UID:event-calendar-event-280590
+DTSTART:20230825T153000Z
+DTEND:20230825T170000Z
+CLASS:PUBLIC
+DESCRIPTION:New Families to Overlake will have the opportunity to ask quest
+ ions and get information on Athletics\, Transportation\, PGA\, Diversity\,
+  Technology & Communication and Food Service. It is also a time to meet ot
+ her new families. Please RSVP here: https://events.veracross.com/overlake/
+ 108-new-family-welcome-2023vcid:49077
+LOCATION:
+SEQUENCE:0
+SUMMARY:New Family Welcome [US]
+URL:https://overlake.instructure.com/calendar?include_contexts=course_5953&
+ month=08&year=2023#calendar_event_280590
+X-ALT-DESC;FMTTYPE=text/html:New Families to Overlake will have the opportu
+ nity to ask questions and get information on Athletics\, Transportation\, 
+ PGA\, Diversity\, Technology &amp\; Communication and Food Service.  It is
+  also a time to meet other new families. Please RSVP here: https://events.
+ veracross.com/overlake/108-new-family-welcome-2023<span class="hidden">vci
+ d:49077</span>
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20230807T235300Z
+UID:event-calendar-event-282610
+DTSTART:20230827T200000Z
+DTEND:20230827T230000Z
+CLASS:PUBLIC
+DESCRIPTION:Celebration to kickoff the 2023-2024 academic year for the Clas
+ s of 2024. More details will be provided as we get closer to this event.
+LOCATION:HOS House
+SEQUENCE:0
+SUMMARY:Senior Social at the HOS House [US]
+URL:https://overlake.instructure.com/calendar?include_contexts=course_5953&
+ month=08&year=2023#calendar_event_282610
+X-ALT-DESC;FMTTYPE=text/html:<p>Celebration to kickoff the 2023-2024 academ
+ ic year for the Class of 2024. More details will be provided as we get clo
+ ser to this event.</p>
+END:VEVENT
