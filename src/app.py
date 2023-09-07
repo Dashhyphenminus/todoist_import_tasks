@@ -41,6 +41,13 @@ def stringToEvents(string):
     events = []
     events.append(Event("title", "date", 100, "description", "url"))
 
+    i = 0
+    while (i < len(string)):
+        workingString = string[i:]
+
+        if (workingString[0:11] == "BEGIN:VEVENT\n"):
+            for i in range (0, 5):
+                print ("hi")
     events[0].show()
 
 
