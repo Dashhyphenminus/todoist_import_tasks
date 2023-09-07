@@ -44,14 +44,17 @@ def stringToEvents(string):
 
     i = 0
     while (i < len(string)):
-        print ("a")
-        workingString = string[i:]
-
-        if (workingString[0:11] == "BEGIN:VEVENT\n"):
-            for i in range (0, 5):
-                print ("hi")
+        #print ("a")
+        i = string.find("BEGIN:VEVENT", i)
+        if (i == -1):
+            break
+        DTstamp = string[string.find("DTSTAMP:", i) + 8 : string.find("\n", string.find("DTSTAMP:", i) + 8)]
+        print (DTstamp)
         
         i += 1
+
+        
+        
 
     events[0].show()
 
