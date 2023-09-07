@@ -27,7 +27,8 @@ class Event:
         self.url = url
 
     def show(self):
-        print(self.title)
+        pass
+        #print(self.title)
 
 
 def icsToString(file):
@@ -43,6 +44,7 @@ def stringToEvents(string):
 
     i = 0
     while (i < len(string)):
+        print ("a")
         workingString = string[i:]
 
         if (workingString[0:11] == "BEGIN:VEVENT\n"):
@@ -50,7 +52,7 @@ def stringToEvents(string):
                 print ("hi")
         
         i += 1
-        
+
     events[0].show()
 
 
