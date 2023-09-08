@@ -1,10 +1,13 @@
-import tkinter as tk
-
 import importlib.util
 import sys
 
 # from todoist_api_python.api import TodoistAPI
 import re
+
+from tkinter import *
+from tkinter.ttk import *
+
+import tkinter as tk
 
 
 class Event:
@@ -89,68 +92,66 @@ calendar = icsToString(calendar)
 events = stringToEvents(calendar)
 
 
-#######################################################
+class Root(Tk):
+    def __init__(self):
+        self.button = []
+        super(Root, self).__init__()
 
-root = tk.Tk()
+        self.title("Python Tkinter")
+        self.minsize(500, 400)
 
-# Tkinter widgets needed for scrolling.  The only native scrollable container that Tkinter provides is a canvas.
-# A Frame is needed inside the Canvas so that widgets can be added to the Frame and the Canvas makes it scrollable.
+    def clicked(a, i):
+        events[i].show()
+
+
+root = Root()
+
 cTableContainer = tk.Canvas(root)
 fTable = tk.Frame(cTableContainer)
-sbHorizontalScrollBar = tk.Scrollbar(root)
+# sbHorizontalScrollBar = tk.Scrollbar(root)
 sbVerticalScrollBar = tk.Scrollbar(root)
 
 
-# Updates the scrollable region of the Canvas to encompass all the widgets in the Frame
 def updateScrollRegion():
     cTableContainer.update_idletasks()
     cTableContainer.config(scrollregion=fTable.bbox())
 
 
-# Sets up the Canvas, Frame, and scrollbars for scrolling
 def createScrollableContainer():
     cTableContainer.config(
-        xscrollcommand=sbHorizontalScrollBar.set,
+        # xscrollcommand=sbHorizontalScrollBar.set,
         yscrollcommand=sbVerticalScrollBar.set,
         highlightthickness=0,
     )
-    sbHorizontalScrollBar.config(orient=tk.HORIZONTAL, command=cTableContainer.xview)
+    # sbHorizontalScrollBar.config(orient=tk.HORIZONTAL, command=cTableContainer.xview)
     sbVerticalScrollBar.config(orient=tk.VERTICAL, command=cTableContainer.yview)
 
-    sbHorizontalScrollBar.pack(fill=tk.X, side=tk.BOTTOM, expand=tk.FALSE)
-    sbVerticalScrollBar.pack(fill=tk.Y, side=tk.RIGHT, expand=tk.FALSE)
-    cTableContainer.pack(fill=tk.BOTH, side=tk.LEFT, expand=tk.TRUE)
-    cTableContainer.create_window(0, 0, window=fTable, anchor=tk.NW)
+    # sbHorizontalScrollBar.pack(fill=tk.X, side=tk.BOTTOM, expand=tk.FALSE)
+    sbVerticalScrollBar.grid(column=1, row=0, sticky="NS")
+    # cTableContainer.pack(fill=tk.BOTH, side=tk.LEFT, expand=tk.TRUE)
+    # cTableContainer.create_window(0, 0, window=fTable, anchor=tk.NW)
 
-
-# Adds labels diagonally across the screen to demonstrate the scrollbar adapting to the increasing size
-i = 0
 
 for i in range(len(events)):
     tk.Button(
         fTable,
         text=str(i + 1) + " " + events[i].getTitle(),
-        command=lambda e=events[i]: e.show(),
-    ).grid(column=1, row=i)
+        command=lambda i=i: root.clicked(i),
+    ).grid(column=2, row=i + 1)
 
     updateScrollRegion()
 
-
-def addNewLabel():
-    global i
-    tk.Button(fTable, text="Hello World", command=lambda i=i: print(i)).grid(
-        row=i, column=i
-    )
-    i += 1
-
-    # Update the scroll region after new widgets are added
-    updateScrollRegion()
-
-    if i < 15:
-        root.after(20, addNewLabel)
+    # root.button.append(
+    #     Button(
+    #         fTable,
+    #         text=str(i + 1) + " " + events[i].getTitle(),
+    #         command=lambda i=i: root.clicked(i),
+    #     )
+    # )
+    # root.button[i].grid(column=2, row=i + 1, sticky=W)
 
 
 createScrollableContainer()
-# addNewLabel()
+
 
 root.mainloop()
