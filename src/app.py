@@ -81,10 +81,6 @@ def stringToEvents(string):
     return events
 
 
-def clicked(event=Event):
-    event.show()
-
-
 calendar = open(
     "C:/Users/rober/OneDrive/Documents/codes/todoist_import_tasks/todoist_import_tasks/src/test.txt",
     "r+",
@@ -110,6 +106,9 @@ class Root(Tk):
                 )
             )
             self.button[i].grid(column=2, row=i + 1, sticky=W)
+
+    def clicked(i):
+        events[i].show()
 
 
 root = Root()
