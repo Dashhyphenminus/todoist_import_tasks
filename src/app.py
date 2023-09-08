@@ -107,7 +107,7 @@ class Root(Tk):
             )
             self.button[i].grid(column=2, row=i + 1, sticky=W)
 
-    def clicked(i):
+    def clicked(a, i):
         events[i].show()
 
 
