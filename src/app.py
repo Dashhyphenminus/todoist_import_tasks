@@ -75,15 +75,14 @@ def stringToEvents(string):
         events.append(thing)
 
         i += 1
-
-    print(events)
-
+    (len(events))
     return events
 
 
 calendar = open(
-    "C:/Users/rober/OneDrive/Documents/codes/todoist_import_tasks/todoist_import_tasks/src/test.txt",
+    "C:/Users/rober/OneDrive/Documents/codes/todoist_import_tasks/todoist_import_tasks/src/user_iyklUxW0TVScRN41qVL0lyh6ZGMhRkitpMX708L2.ics",
     "r+",
+    encoding="utf-8",
 )
 calendar = icsToString(calendar)
 events = stringToEvents(calendar)
@@ -91,6 +90,10 @@ events = stringToEvents(calendar)
 
 class Root(Tk):
     def __init__(self):
+        # v = Scrollbar(self)
+
+        # v.pack(side=RIGHT, fill=Y)
+
         self.button = []
         super(Root, self).__init__()
 
@@ -101,7 +104,7 @@ class Root(Tk):
             self.button.append(
                 Button(
                     self,
-                    text=str(i + 1) + events[i].getTitle(),
+                    text=str(i + 1) + " " + events[i].getTitle(),
                     command=lambda i=i: self.clicked(i),
                 )
             )
