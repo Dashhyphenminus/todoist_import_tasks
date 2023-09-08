@@ -19,6 +19,9 @@ class Event:
     def show(self):
         print(self.title)
 
+    def getTitle(self):
+        return self.title
+
 
 def icsToString(file):
     thing = file.read()
@@ -82,6 +85,14 @@ def clicked(event=Event):
     event.show()
 
 
+calendar = open(
+    "C:/Users/rober/OneDrive/Documents/codes/todoist_import_tasks/todoist_import_tasks/src/test.txt",
+    "r+",
+)
+calendar = icsToString(calendar)
+events = stringToEvents(calendar)
+
+
 class Root(Tk):
     def __init__(self):
         self.button = []
@@ -90,23 +101,16 @@ class Root(Tk):
         self.title("Python Tkinter")
         self.minsize(500, 400)
 
-        for i in range(0, 18):
+        for i in range(len(events)):
             self.button.append(
                 Button(
                     self,
-                    text="Game " + str(i + 1),
+                    text=str(i + 1) + events[i].getTitle(),
                     command=lambda i=i: self.clicked(i),
                 )
             )
             self.button[i].grid(column=2, row=i + 1, sticky=W)
 
-
-calendar = open(
-    "C:/Users/rober/OneDrive/Documents/codes/todoist_import_tasks/todoist_import_tasks/src/test.txt",
-    "r+",
-)
-calendar = icsToString(calendar)
-events = stringToEvents(calendar)
 
 root = Root()
 root.mainloop()
