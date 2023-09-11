@@ -1,10 +1,23 @@
 import tkinter as tk
 
+import requests
+
 import importlib.util
 import sys
 
 # from todoist_api_python.api import TodoistAPI
 import re
+
+
+header = {"Authorization": "Bearer 9eb747d74cc4d5ad6c5a9b506bc4761b6e6005d6"}
+
+# print(
+#     requests.get(
+#         "https://api.todoist.com/rest/v2/projects",
+#         headers=header
+#         # params={"Authorization: Bearer 9eb747d74cc4d5ad6c5a9b506bc4761b6e6005d6"},
+#     )
+# )
 
 
 class Event:
@@ -31,7 +44,7 @@ def icsToString(file):
 
 def stringToEvents(string):
     events = []
-    events.append(Event("title", 100, 100, "description", "url"))
+    # events.append(Event("title", 100, 100, "description", "url"))
 
     i = 0
     while i < len(string):
@@ -90,6 +103,15 @@ events = stringToEvents(calendar)
 
 
 #######################################################
+
+url = "https://api.todoist.com/rest/v2/projects"
+dat = {"content": "Buy Milk"}
+header = {
+    "Content-Type": "application/json",
+    "Authorization": "Bearer 9eb747d74cc4d5ad6c5a9b506bc4761b6e6005d6",
+}
+requests.post(url, data=dat, headers=header)
+
 
 root = tk.Tk()
 
