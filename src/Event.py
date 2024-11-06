@@ -19,7 +19,7 @@ class Event:
 
 
     # def addEvent(tag, self):
-    #     api = TodoistAPI("9eb747d74cc4d5ad6c5a9b506bc4761b6e6005d6")
+    #     api = TodoistAPI("")
     #     try:
     #         task = api.add_task(
     #             content = self.title,
